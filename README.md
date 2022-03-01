@@ -5,7 +5,7 @@ The policies are written in [Rego](https://www.openpolicyagent.org/docs/latest/#
 
 Requires [conftest](https://www.conftest.dev/install/) and [skopeo](https://github.com/containers/skopeo) utilities installed on the system.
 
-##List of implemented policies:
+## List of implemented policies:
 
 * Required and deprecated label policies for image metadata obtained by inspecting the image
 * Deprecated repository policy for repository Pyxis data

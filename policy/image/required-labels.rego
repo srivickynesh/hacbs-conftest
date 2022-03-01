@@ -25,7 +25,7 @@ deny[msg] {
 }
 
 deny[msg] {
-  not input.Labels["io.k8s.description_label"]
+  not input.Labels["io.k8s.description"]
 
   msg := "The io.k8s.description_label label needs to be defined"
 }
@@ -37,49 +37,49 @@ deny[msg] {
 }
 
 deny[msg] {
-  not input.labels["vcs-type"]
+  not input.Labels["vcs-type"]
 
   msg := "the vcs-type label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels.architecture
+  not input.Labels.architecture
 
   msg := "the architecture label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels["com.redhat.build-host"]
+  not input.Labels["com.redhat.build-host"]
 
   msg := "the com.redhat.build-host label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels.vendor
+  not input.Labels.vendor
 
   msg := "the vendor label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels.release
+  not input.Labels.release
 
   msg := "the release label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels.url
+  not input.Labels.url
 
   msg := "the url label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels["build-date"]
+  not input.Labels["build-date"]
 
   msg := "the build-date label needs to be defined"
 }
 
 deny[msg] {
-  not input.labels["distribution-scope"]
+  not input.Labels["distribution-scope"]
 
   msg := "the distribution-scope label needs to be defined"
 }

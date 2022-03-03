@@ -1,0 +1,37 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: basic-sanity-check
+spec:
+  stepTemplate:
+    volumeMounts:
+      - name: project
+        mountPath: /workspace/source/image
+  params:
+    - name: sourceImage
+      description: the fully qualified image name
+      default: quay.io/cvpops/test-index:v4.10
+  resources:
+    inputs:
+      - name: source
+        type: git
+  steps:
+    - name: inspect-image
+      image: quay.io/skopeo/stable:latest
+      script: "skopeo inspect docker://$(inputs.params.sourceImage) > /project/image_inspect.json"
+      volumeMounts:
+        - name: project
+          mountPath: /project
+    - name: basic-sanity-checks
+      image: openpolicyagent/conftest
+      args:
+        - "test"
+        - "image_inspect.json"
+        - "--output=json"
+      volumeMounts:
+        - name: project
+          mountPath: /project
+  volumes:
+    - name: project
+      emptyDir: {}

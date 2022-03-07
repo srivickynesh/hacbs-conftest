@@ -7,21 +7,21 @@ deny[msg] {
 }
 
 deny[msg] {
-  input.Labels["ARCHITECTURE"]
+  input.Labels["Architecture"]
 
-  msg := "The  label is deprecated, replace with 'architecture'"
+  msg := "The Architecture label is deprecated, replace with 'architecture'"
 }
 
 deny[msg] {
-  input.Labels["NAME"]
+  input.Labels["Name"]
 
-  msg := "The NAME label is deprecated, replace with 'name'"
+  msg := "The Name label is deprecated, replace with 'name'"
 }
 
 deny[msg] {
-  input.Labels["RELEASE"]
+  input.Labels["Release"]
 
-  msg := "The RELEASE label is deprecated, replace with 'release'"
+  msg := "The Release label is deprecated, replace with 'release'"
 }
 
 deny[msg] {
@@ -31,13 +31,19 @@ deny[msg] {
 }
 
 deny[msg] {
-  input.Labels["VERSION"]
+  input.Labels["Version"]
 
-  msg := "The VERSON label is deprecated, replace with 'version'"
+  msg := "The Version label is deprecated, replace with 'version'"
 }
 
 deny[msg] {
-  input.Labels["bzcomponent"]
+  input.Labels["BZComponent"]
 
-  msg := "The bzcomponent label is deprecated, replace with 'com.redhat.component'"
+  msg := "The BZComponent label is deprecated, replace with 'com.redhat.component'"
+}
+
+deny[msg] {
+  input.Labels["RUN"]
+
+  msg := "The RUN label is deprecated, replace with 'run'"
 }

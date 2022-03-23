@@ -1,49 +1,65 @@
 package main
 
-deny[msg] {
+violation_install_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["INSTALL"]
 
-  msg := "The INSTALL label is deprecated, replace with 'install'"
+  name := "install_label_deprecated"
+  msg := "INSTALL label deprecated"
+  description := "The 'INSTALL' label is deprecated, replace with 'install'"
 }
 
-deny[msg] {
+violation_architecture_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["Architecture"]
 
-  msg := "The Architecture label is deprecated, replace with 'architecture'"
+  name := "architecture_label_deprecated"
+  msg := "The Architecture label is deprecated"
+  description := "The 'Architecture' label is deprecated, replace with 'architecture'"
 }
 
-deny[msg] {
+violation_name_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["Name"]
 
-  msg := "The Name label is deprecated, replace with 'name'"
+  name := "name_label_deprecated"
+  msg := "The Name label is deprecated"
+  description := "The 'Name' label is deprecated, replace with 'name'"
 }
 
-deny[msg] {
+violation_release_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["Release"]
 
-  msg := "The Release label is deprecated, replace with 'release'"
+  name := "release_label_deprecated"
+  msg := "The Release label is deprecated"
+  description := "The 'Release' label is deprecated, replace with 'release'"
 }
 
-deny[msg] {
+violation_uninstall_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["UNINSTALL"]
 
-  msg := "The UNINSTALL label is deprecated, replace with 'uninstall'"
+  name := "uninstall_label_deprecated"
+  msg := "The UNINSTALL label is deprecated"
+  description := "The 'UNINSTALL' label is deprecated, replace with 'uninstall'"
 }
 
-deny[msg] {
+violation_version_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["Version"]
 
-  msg := "The Version label is deprecated, replace with 'version'"
+  name := "version_label_deprecated"
+  msg := "The Version label is deprecated"
+  description := "The 'Version' label is deprecated, replace with 'version'"
 }
 
-deny[msg] {
+violation_bzcomponent_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["BZComponent"]
 
-  msg := "The BZComponent label is deprecated, replace with 'com.redhat.component'"
+  name := "bzcomponent_label_deprecated"
+  msg := "The BZComponent label is deprecated"
+  description := "The BZComponent label is deprecated, replace with 'com.redhat.component'"
 }
 
-deny[msg] {
+violation_run_deprecated[{"msg": msg, "details":{"name": name, "description": description}}] {
   input.Labels["RUN"]
 
-  msg := "The RUN label is deprecated, replace with 'run'"
+  name := "run_label_deprecated"
+  msg := "The RUN label is deprecated"
+  description := "The 'RUN' label is deprecated, replace with 'run'"
 }

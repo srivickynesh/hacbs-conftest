@@ -1,86 +1,114 @@
 package main
 
-deny[msg] {
-  not input.Labels.name
+violation_install_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["name"]
 
-  msg := "The name label needs to be defined"
+  name := "name_label_required"
+  msg := "'name' label is required"
+  description := "The 'name' label needs to be defined"
 }
 
-deny[msg] {
+violation_com_redhat_component_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["com.redhat.component"]
 
-  msg := "The com.redhat.component label needs to be defined"
+  name := "com_redhat_component_label_required"
+  msg := "'com.redhat.component' label is required"
+  description := "The 'com.redhat.component' label needs to be defined"
 }
 
-deny[msg] {
-  not input.Labels.version
+violation_version_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["version"]
 
-  msg := "The version label needs to be defined"
+  name := "version_label_required"
+  msg := "'version' label is required"
+  description := "The 'version' label needs to be defined"
 }
 
-deny[msg] {
-  not input.Labels.description
+violation_description_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["description"]
 
-  msg := "The description label needs to be defined"
+  name := "description_label_required"
+  msg := "'description' label is required"
+  description := "The 'description' label needs to be defined"
 }
 
-deny[msg] {
+violation_io_k8s_description_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["io.k8s.description"]
 
-  msg := "The io.k8s.description_label label needs to be defined"
+  name := "io_k8s_description_label_required"
+  msg := "'io.k8s.description' label is required"
+  description := "The 'io.k8s.description' label needs to be defined"
 }
 
-deny[msg] {
+violation_vcs_ref_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["vcs-ref"]
 
-  msg := "The vcs-ref label needs to be defined"
+  name := "vcs_ref_label_required"
+  msg := "'vcs-ref' label is required"
+  description := "The 'vcs-ref' label needs to be defined"
 }
 
-deny[msg] {
+violation_vcs_type_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["vcs-type"]
 
-  msg := "the vcs-type label needs to be defined"
+  name := "vcs_type_label_required"
+  msg := "'vcs-type' label is required"
+  description := "The 'vcs-type' label needs to be defined"
 }
 
-deny[msg] {
-  not input.Labels.architecture
+violation_architecture_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["architecture"]
 
-  msg := "the architecture label needs to be defined"
+  name := "architecture_label_required"
+  msg := "'architecture' label is required"
+  description := "The 'architecture' label needs to be defined"
 }
 
-deny[msg] {
+violation_com_redhat_build_host_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["com.redhat.build-host"]
 
-  msg := "the com.redhat.build-host label needs to be defined"
+  name := "com_redhat_build_host_label_required"
+  msg := "'com.redhat.build-host' label is required"
+  description := "The 'com.redhat.build-host' label needs to be defined"
 }
 
-deny[msg] {
-  not input.Labels.vendor
+violation_vendor_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["vendor"]
 
-  msg := "the vendor label needs to be defined"
+  name := "vendor_label_required"
+  msg := "'vendor' label is required"
+  description := "The 'vendor' label needs to be defined"
 }
 
-deny[msg] {
-  not input.Labels.release
+violation_release_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["release"]
 
-  msg := "the release label needs to be defined"
+  name := "release_label_required"
+  msg := "'release' label is required"
+  description := "The 'release' label needs to be defined"
 }
 
-deny[msg] {
-  not input.Labels.url
+violation_url_required[{"msg": msg, "details":{"name": name, "description": description}}] {
+  not input.Labels["url"]
 
-  msg := "the url label needs to be defined"
+  name := "url_label_required"
+  msg := "'url' label is required"
+  description := "The 'url' label needs to be defined"
 }
 
-deny[msg] {
+violation_build_date_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["build-date"]
 
-  msg := "the build-date label needs to be defined"
+  name := "build_date_label_required"
+  msg := "'build-date' label is required"
+  description := "The 'build-date' label needs to be defined"
 }
 
-deny[msg] {
+violation_distribution_scope_required[{"msg": msg, "details":{"name": name, "description": description}}] {
   not input.Labels["distribution-scope"]
 
-  msg := "the distribution-scope label needs to be defined"
+  name := "distribution_scope_label_required"
+  msg := "'distribution-scope' label is required"
+  description := "The 'distribution-scope' label needs to be defined"
 }
 

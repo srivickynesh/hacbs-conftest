@@ -1,0 +1,61 @@
+[
+  {
+    "filename": "image-fail.json",
+    "namespace": "main",
+    "successes": 19,
+    "warnings": [
+      {
+        "msg": "The 'maintainer' label should be defined",
+        "metadata": {
+          "details": {
+            "description": "The name and email of the maintainer (usually the submitter). Should contain `@redhat.com` or `Red Hat`.",
+            "name": "maintainer_label_required",
+            "url": "https://source.redhat.com/groups/public/container-build-system/container_build_system_wiki/guide_to_layered_image_build_service_osbs#jive_content_id_Labels"
+          }
+        }
+      }
+    ],
+    "failures": [
+      {
+        "msg": "The Architecture label is deprecated",
+        "metadata": {
+          "details": {
+            "description": "The 'Architecture' label is deprecated, replace with 'architecture'",
+            "name": "architecture_label_deprecated",
+            "url": "https://source.redhat.com/groups/public/container-build-system/container_build_system_wiki/guide_to_layered_image_build_service_osbs#jive_content_id_Labels"
+          }
+        }
+      },
+      {
+        "msg": "The Release label is deprecated",
+        "metadata": {
+          "details": {
+            "description": "The 'Release' label is deprecated, replace with 'release'",
+            "name": "release_label_deprecated",
+            "url": "https://source.redhat.com/groups/public/container-build-system/container_build_system_wiki/guide_to_layered_image_build_service_osbs#jive_content_id_Labels"
+          }
+        }
+      },
+      {
+        "msg": "The 'architecture' label is required",
+        "metadata": {
+          "details": {
+            "description": "Architecture the software in the image should target.",
+            "name": "architecture_label_required",
+            "url": "https://source.redhat.com/groups/public/container-build-system/container_build_system_wiki/guide_to_layered_image_build_service_osbs#jive_content_id_Labels"
+          }
+        }
+      },
+      {
+        "msg": "The 'release' label is required",
+        "metadata": {
+          "details": {
+            "description": "Release Number for this version.",
+            "name": "release_label_required",
+            "url": "https://source.redhat.com/groups/public/container-build-system/container_build_system_wiki/guide_to_layered_image_build_service_osbs#jive_content_id_Labels"
+          }
+        }
+      }
+    ]
+  }
+]

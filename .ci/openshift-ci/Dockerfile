@@ -1,5 +1,7 @@
-SHELL ["/bin/bash", "-c"]
+FROM quay.io/redhat-appstudio/hacbs-test:latest as e2e
+FROM registry.ci.openshift.org/openshift/release:golang-1.16
 
+SHELL ["/bin/bash", "-c"]
 
 # Install yq, kubectl, kustomize
 RUN wget https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64 -O /usr/local/bin/yq && \
@@ -9,4 +11,4 @@ RUN wget https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd6
     mv ./kubectl /usr/local/bin && \
     curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash && \
     cp kustomize /usr/bin/ && \
-    chmod ug+x /usr/bin/kustomize && \
+    chmod ug+x /usr/bin/kustomize

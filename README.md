@@ -1,5 +1,7 @@
 # HACBS Conftest policies
 
+Adding YAML Linter to validate yaml files
+
 Collection of [Conftest](https://www.conftest.dev/) policies for HACBS container sanity tests.
 The policies are written in [Rego](https://www.openpolicyagent.org/docs/latest/#rego) language from [Open Policy Agent](https://www.openpolicyagent.org/).
 

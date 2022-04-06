@@ -1,5 +1,6 @@
-SHELL ["/bin/bash", "-c"]
+FROM registry.ci.openshift.org/openshift/release:golang-1.16
 
+SHELL ["/bin/bash", "-c"]
 
 # Install yq, kubectl, kustomize
 RUN wget https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64 -O /usr/local/bin/yq && \

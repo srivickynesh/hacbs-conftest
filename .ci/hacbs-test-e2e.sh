@@ -10,15 +10,14 @@ command -v kubectl >/dev/null 2>&1 || { echo "kubectl is not installed. Aborting
 
 
 export WORKSPACE=$(dirname $(dirname $(readlink -f "$0")));
-export TEST_SUITE="hacbs-test-suite"
-export GITHUB_URL="https://github.com/srivickynesh/hacbs-conftest"
+export GITHUB_URL="https://github.com/redhat-appstudio/hacbs-test"
 export TASK_NAME="sanity-label-check"
 
 # Available openshift ci environments https://docs.ci.openshift.org/docs/architecture/step-registry/#available-environment-variables
 export ARTIFACTS_DIR=${ARTIFACT_DIR:-"/tmp/hacbs-test"}
 
 function executeE2ETests() {
-    sh ../hack/test-build.sh $GITHUB_URL $TASK_NAME
+    sh ../hack/test-e2e.sh $GITHUB_URL $TASK_NAME
 }
 
 executeE2ETests

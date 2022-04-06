@@ -6,7 +6,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 GITREPO=$1
 TASK_NAME=$2
-APPLICATION_NAMESPACE="test-pipeline"
+APPLICATION_NAMESPACE="default"
 
 if [ -z "$GITREPO" ]; then
   echo Missing parameter Git URL to Build
@@ -48,6 +48,12 @@ function checkTaskCompletion() {
     fi
 }
 
+oc apply -f ../hack/subscription.yaml
+
+sleep 30
+
+kubectl apply -f ../tekton/tasks/sanity-label-check.yaml
+
 tkn tasks start $TASK_NAME --showlog
 
 tkn tasks describe $TASK_NAME -n $APPLICATION_NAMESPACE
@@ -56,6 +62,4 @@ export -f checkTaskCompletion
 
 timeout --foreground 10s bash -c checkTaskCompletion
 
-/bin/bash clean_completed.sh
-
-# tkn pipeline start $PIPELINE_NAME -w name=workspace,claimName=appstudio,subPath=$BUILD_TAG $PUSH_WORKSPACE -p git-url=$GITREPO -p output-image=$IMG --use-param-defaults
+/bin/bash ../hack/clean_completed.sh
